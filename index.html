@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello AI</title>
+</head>
+<body>
+  <h2>Hi AI</h2>
+</body>
+<script src="lib/ApiAi.js"></script>
+<script>
+console.log('Hi');
+const client = new ApiAi.ApiAiClient({accessToken: '7ead3dd4995c4b94bf5775e65269f618'});
+console.log(client);
+const promise = client.textRequest('Weather Forecast Berlin?');
+
+promise
+    .then(handleResponse)
+    .catch(handleError);
+
+function handleResponse(serverResponse) {
+        console.log(serverResponse);
+}
+function handleError(serverError) {
+        console.log(serverError);
+}
+</script>
+</html>
